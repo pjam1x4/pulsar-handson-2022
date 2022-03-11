@@ -13,11 +13,11 @@ logger = logging.getLogger('pulsar')
 logger.setLevel('INFO')
 client = pulsar.Client('pulsar://pulsar:6650', logger=logger)
 
-topic = "FIXME"
+topic = "persistent://my-tenant/my-namespace/input"
 schema = pulsar.schema.JsonSchema(Employee)
 
 producer = client.create_producer(topic=topic, schema=schema)
-employee = Employee(id=100, firstName="Taro", 
+employee = Employee(id=101, firstName="Jiro", 
                     lastName="Yamada", title="Manager")
 producer.send(employee)
 

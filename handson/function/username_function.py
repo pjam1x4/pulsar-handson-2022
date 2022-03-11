@@ -10,4 +10,4 @@ class UsernameFunction(Function):
 
   def process(self, input, context):
     input_json = json.loads(input)
-    return ("%s %s" % (input_json["FIXME"], input_json["FIXME"]))
+    return ("%s %s" % (input_json["firstName"], input_json["lastName"]))

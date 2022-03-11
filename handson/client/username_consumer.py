@@ -7,7 +7,7 @@ logger = logging.getLogger('pulsar')
 logger.setLevel('INFO')
 client = pulsar.Client('pulsar://pulsar:6650', logger=logger)
 
-topic = "FIXME"
+topic = "persistent://my-tenant/my-namespace/output"
 consumer = client.subscribe(
     topic=topic, subscription_name="my-subscription")
 
